@@ -19,37 +19,37 @@ public class Card {
     }
 
     public Card(Suit suit, Rank rank) {
-    	if (suit == null || rank == null) {
-    		throw new NullPointerException("Either suit or rank of card is null.");
-    	}
-    	this.suit = suit;
-    	this.rank = rank;
+        if (suit == null || rank == null) {
+            throw new RuntimeException("Either suit or rank of card is null.");
+        }
+        this.suit = suit;
+        this.rank = rank;
     }
     
     /**
      * turn the card over
      */
     public void turnUp() {
-    	isUpTurned = true;
+        isUpTurned = true;
     }
 
     /**
      * true if the card is turned up and visible
      * @return
      */
-	public boolean isUpTurned() {
-		return isUpTurned;
-	}
-	
-	/**
-	 * return card name if it is turned up
-	 * return a mask value if card is hidden 
-	 */
+    public boolean isUpTurned() {
+        return isUpTurned;
+    }
+    
+    /**
+     * return card name if it is turned up
+     * return a mask value if card is hidden 
+     */
     public String toString() {
-    	if (isUpTurned) {
-    		return suit.getCode() + rank.toString(); 
-    	} else {
-    		return HIDDEN_CARD_MASK;
-    	}
+        if (isUpTurned) {
+            return suit.getCode() + rank.toString(); 
+        } else {
+            return HIDDEN_CARD_MASK;
+        }
     }
 }

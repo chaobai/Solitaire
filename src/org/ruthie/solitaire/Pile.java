@@ -9,17 +9,13 @@ import java.util.List;
  *
  */
 public class Pile {
-	private final List<Card> cards;
-	
-	public Pile() {
-		cards = new ArrayList<Card>();
-	}
-	
-	public void add(Card card) {
-		cards.add(card);
-	}
+    private final List<Card> cards = new ArrayList<Card>();
 
-	public Card get(int idx) {
-		return idx < cards.size() ? cards.get(idx) : null;
-	}
+    public void add(Card card) {
+        cards.add(card);
+    }
+
+    public Card get(int idx) {
+        return (idx < 0 || idx >= cards.size()) ? null : cards.get(idx);
+    }
 }
